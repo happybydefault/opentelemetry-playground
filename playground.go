@@ -19,7 +19,6 @@ type Playground struct {
 }
 
 func New(options ...Option) *Playground {
-	otel.GetTracerProvider()
 	p := Playground{
 		mux: chi.NewMux(),
 		tracer: otel.GetTracerProvider().Tracer(name,
